@@ -2,21 +2,36 @@ package exercise.B14;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         StudentManager sm = new StudentManager();
-
-        List<GoodStudent> goodStudent = Arrays.asList(
-                new GoodStudent("Nguyễn Văn D","", "", "1", "",1 ,  7.3f, ""),
-                new GoodStudent("Nguyễn Văn B","", "", "2", "",1 , 7.2f, ""),
-                new GoodStudent("Nguyễn Văn A", "", "", "3", "", 1, 7.2f, ""),
-                new GoodStudent("Nguyễn Văn C","", "", "4", "", 1,  7.3f, "")
-        );
-        System.out.println("abc");
-        List<GoodStudent> lgs = sm.getSortedGoodStudent(goodStudent).subList(0, 2);
-        lgs.forEach(o -> System.out.println(o.ShowMyInfor()));
-
-        sm.showAll(goodStudent);
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println("Enter 1 to add a Student");
+            System.out.println("Enter 2 to get list sorted Student passed");
+            System.out.println("Enter 3 to get list of student");
+            String option = sc.nextLine();
+            switch (option) {
+                case "1": {
+                    int type = sc.nextInt();
+                    sc.nextLine();
+                    sm.insert(type);
+                    break;
+                }
+                case "2": {
+                    System.out.println("Enter num of students:");
+                    int n = sc.nextInt();
+                    sc.nextLine();
+                    sm.getSortedStudent(sm.getStudentList(), n).forEach(o -> System.out.println(o.getFullName()));
+                    break;
+                }
+                case "3": {
+                    sm.showAll(sm.getStudentList());
+                    break;
+                }
+            }
+        }
     }
 }

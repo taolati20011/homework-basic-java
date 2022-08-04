@@ -4,9 +4,6 @@ import exercise.B14.Exception.InvalidDOBException;
 import exercise.B14.Exception.InvalidFullNameException;
 import exercise.B14.Exception.InvalidPhoneNumberException;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 public class ExceptionCheck {
     public static boolean invalidFullName(String name) {
         if (name.length() < 10 | name.length() > 30) {

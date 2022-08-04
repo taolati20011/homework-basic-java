@@ -15,6 +15,14 @@ public class GoodStudent extends Student {
         this.bestRewardName = bestRewardName;
     }
 
+    public GoodStudent(Student student) {
+        super(student.fullName, student.doB, student.sex, student.phoneNumber, student.universityName, student.gradeLevel);
+        if (student instanceof GoodStudent) {
+            this.gpa = ((GoodStudent) student).gpa;
+            this.bestRewardName = ((GoodStudent) student).bestRewardName;
+        }
+    }
+
     public double getGpa() {
         return gpa;
     }

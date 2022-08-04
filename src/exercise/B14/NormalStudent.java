@@ -15,6 +15,14 @@ public class NormalStudent extends Student {
         this.entryTestScore = entryTestScore;
     }
 
+    public NormalStudent(Student student) {
+        super(student.fullName, student.doB, student.sex, student.phoneNumber, student.universityName, student.gradeLevel);
+        if (student instanceof NormalStudent) {
+            this.englishScore = ((NormalStudent) student).englishScore;
+            this.entryTestScore = ((NormalStudent) student).entryTestScore;
+        }
+    }
+
     public double getEnglishScore() {
         return englishScore;
     }
