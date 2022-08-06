@@ -28,6 +28,7 @@ public class Fresher extends Employee {
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", employee_type='" + employee_type + '\'' +
+                ",certificate= " + certificateList.toString() + '\'' +
                 '}';
     }
 }

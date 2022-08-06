@@ -9,7 +9,7 @@ public class Intern extends Employee {
 
     public Intern(String id, String fullname, LocalDate birthday, String phone, String email, String majors, String semester, String university_name) {
         super(id, fullname, birthday, phone, email);
-        this.employee_type = "2";
+        this.employee_type = "0";
         newCreated();
         this.majors = majors;
         this.semester = semester;
@@ -28,6 +28,7 @@ public class Intern extends Employee {
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", employee_type='" + employee_type + '\'' +
+                ",certificate= " + certificateList.toString() + '\'' +
                 '}';
     }
 }

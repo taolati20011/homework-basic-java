@@ -8,7 +8,7 @@ public class Experience extends Employee {
 
     public Experience(String id, String fullname, LocalDate birthday, String phone, String email, int explnYear, String proSkill) {
         super(id, fullname, birthday, phone, email);
-        this.employee_type = "0";
+        this.employee_type = "1";
         newCreated();
         this.explnYear = explnYear;
         this.proSkill = proSkill;
@@ -25,6 +25,7 @@ public class Experience extends Employee {
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", employee_type='" + employee_type + '\'' +
+                ",certificate= " + certificateList.toString() + '\'' +
                 '}';
     }
 }
